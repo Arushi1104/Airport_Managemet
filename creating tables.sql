@@ -1,7 +1,7 @@
 -- Drop and Create the Database
-DROP DATABASE IF EXISTS airport_managment_system;
-CREATE DATABASE airport_managment_system;
-USE airport_managment_system;
+DROP DATABASE IF EXISTS airport_management_system;
+CREATE DATABASE airport_management_system;
+USE airport_management_system;
 
 -- Table: Airport
 CREATE TABLE Airport (
