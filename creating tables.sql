@@ -57,13 +57,14 @@ CREATE TABLE Flight (
     FOREIGN KEY (aircraft_id) REFERENCES Aircraft(aircraft_id)
 );
 
--- Table: Booking
+-- Table: Booking (NO unique constraint on seat; status-based booking control)
 CREATE TABLE Booking (
     booking_id INT AUTO_INCREMENT PRIMARY KEY,
     passenger_id INT,
     flight_id INT,
     seat_number VARCHAR(5),
     booking_date DATE,
+    status ENUM('booked', 'cancelled') DEFAULT 'booked',
     FOREIGN KEY (passenger_id) REFERENCES Passenger(passenger_id),
     FOREIGN KEY (flight_id) REFERENCES Flight(flight_id)
 );
@@ -79,4 +80,3 @@ CREATE TABLE Users (
     FOREIGN KEY (passenger_id) REFERENCES Passenger(passenger_id),
     FOREIGN KEY (employee_id) REFERENCES Employee(employee_id)
 );
-
